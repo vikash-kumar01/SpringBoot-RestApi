@@ -3,6 +3,7 @@ package com.rockstar.springbootrestapi.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,35 @@ public class BookService {
         Book book =list.stream().filter(e->e.getId()==id).findFirst().get();
 
         return book;
+    }
+
+    // Add a new Book
+
+    public Book addBook(Book b){
+        list.add(b);
+
+        return b;
+    }
+
+    // Delete a Book
+
+    public void deleteBook(int bookId){
+      
+        list = list.stream().filter(book->book.getId()!=bookId).collect(Collectors.toList());
+        // Update the same List with Books whose ID not asked to delete
+    }
+
+    // Update a Book Data
+     
+    public void updateBook(Book book, int bookId){
+
+        list = list.stream().map(v->{
+            if(v.getId()==bookId){
+                v.setTitle(book.getTitle());
+                v.setAuthor(book.getAuthor());
+            }
+            return v;
+        }).collect(Collectors.toList());
     }
 
 }
