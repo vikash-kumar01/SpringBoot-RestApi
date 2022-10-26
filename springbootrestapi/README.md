@@ -13,6 +13,11 @@
 # 4. Delete a Book
 
    ![image](https://user-images.githubusercontent.com/35370115/198059852-0c9ae99d-a0f8-4e38-be3a-b4e5fadb7219.png) 
+   
+# 5. Update a Book
+
+   ![image](https://user-images.githubusercontent.com/35370115/198065754-5a5e8104-b67f-445a-b345-d52b1ed7960a.png)
+
 
 
 
